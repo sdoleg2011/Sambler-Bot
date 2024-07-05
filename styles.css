@@ -1,0 +1,113 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #f06, #4a90e2);
+    color: #fff;
+    text-align: center;
+}
+
+a {
+    color: var(--tg-theme-link-color);
+}
+#viewport {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: var(--tg-viewport-stable-height, 100vh);
+    pointer-events: none;
+    transition: all .2s ease;
+}
+#viewport:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-width: 4px;
+    border-style: solid;
+    border-image: linear-gradient(45deg, rgba(64, 224, 208, .5), rgba(173, 255, 47, .5)) 1;
+}
+
+#viewport-params-size,
+#viewport-params-expand {
+    content: attr(text);
+    position: absolute;
+    display: inline-block;
+    background: var(--tg-theme-link-color, rgb(64, 224, 208));
+    right: 4px;
+    left: auto;
+    font-size: 8px;
+    padding: 4px;
+    vertical-align: top;
+}
+#viewport-params-size {
+    top: 4px;
+}
+#viewport-params-expand {
+    top: 30px;
+}
+
+p {
+    padding-top: 5px;
+    color: white;
+    font-size: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.count {
+    padding-top: 50px;
+    font-size: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.cool-button {
+    background: linear-gradient(45deg, #FF6F61, #FFB88C, #FFD700);
+    border-radius: 999px;
+    box-shadow: 0 10px 20px -10px rgba(255, 111, 97, 0.5);
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: 'Inter', Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    padding: 12px 24px;
+    user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    height: 70px;
+    border: 0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cool-button:hover {
+    background-position: right center;
+    box-shadow: 0 15px 25px -10px rgba(255, 111, 97, 0.7);
+  }
+  
+  .cool-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    transition: all 0.5s ease;
+    transform: translate(-50%, -50%) scale(0.1);
+    opacity: 0;
+  }
+  
+  .cool-button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
